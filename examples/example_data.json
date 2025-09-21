@@ -1,0 +1,236 @@
+{
+    "question": "Is Yui Yuigahama's pet a corgi?",
+    "a_entity": false,
+    "graph": [
+        [
+            "Yui Yuigahama",
+            "fictional character from My Youth Romantic Comedy Is Wrong, As I Expected",
+            {
+                "relation": "is"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "My Youth Romantic Comedy Is Wrong, As I Expected",
+            {
+                "relation": "present in work"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "female",
+            {
+                "relation": "sex or gender"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "high school student",
+            {
+                "relation": "occupation"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Yui",
+            {
+                "relation": "given name"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Japan",
+            {
+                "relation": "country of citizenship"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Japanese",
+            {
+                "relation": "native language"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "written or signed, Japanese",
+            {
+                "relation": "languages spoken"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Wataru Watari",
+            {
+                "relation": "creator"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "June 18",
+            {
+                "relation": "birthday"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "O",
+            {
+                "relation": "blood type"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "oregairu:Yui_Yuigahama",
+            {
+                "language of work or name": "English",
+                "MediaWiki page ID": "2087",
+                "relation": "Fandom article ID",
+                "subject named as": "Yui Yuigahama"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "51412",
+            {
+                "relation": "AniDB character ID"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Yuigahama",
+            {
+                "relation": "family name"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "67069",
+            {
+                "relation": "MyAnimeList character ID"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Chiba Municipal S\u014dbu High School",
+            {
+                "relation": "educated at"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "\u7531\u6bd4\u30f6\u6d5c\u7d50\u8863",
+            {
+                "relation": "NicoNicoPedia ID"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "fictional human",
+            {
+                "relation": "instance of"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "literary character",
+            {
+                "relation": "instance of"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "manga character",
+            {
+                "relation": "instance of"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "anime character",
+            {
+                "relation": "instance of"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Nao T\u014dyama",
+            {
+                "relation": "voice actor"
+            }
+        ],
+        [
+            "Yui Yuigahama",
+            "Sabl\u00e9",
+            {
+                "relation": "has pet"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "fictional dog",
+            {
+                "relation": "instance of"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "pet",
+            {
+                "relation": "instance of"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "My Youth Romantic Comedy Is Wrong, As I Expected",
+            {
+                "relation": "present in work"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "Wataru Watari",
+            {
+                "relation": "creator"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "Yui Yuigahama",
+            {
+                "relation": "owned by"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "dachshund",
+            {
+                "relation": "animal breed"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "male organism",
+            {
+                "relation": "sex or gender"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "oregairu:Sabl\u00e9",
+            {
+                "language of work or name": "English",
+                "MediaWiki page ID": "14567",
+                "relation": "Fandom article ID",
+                "subject named as": "Sabl\u00e9"
+            }
+        ],
+        [
+            "Sabl\u00e9",
+            "Aoi Y\u016bki",
+            {
+                "relation": "voice actor"
+            }
+        ]
+    ]    
+}

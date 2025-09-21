@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ark_v1"
+version = "1.0.0"
+description = "ARK-V1 is an LLM-Agent which performs reasoning on a knowledge graph."
+authors = [
+    { name = "Jan-Felix Klein", email = "janfelixklein@ooglemail.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+
+dependencies = [
+   "pydantic>=2.11.0",
+   "langchain>=0.3.21",
+   "langchain_ollama>=0.3.0",
+   "langgraph>=0.6.5",
+   "langchain-openai>=0.3.30",
+   "transformers>=4.50.3",
+   "networkx>=3.4.2",
+   "sentence-transformers>=5.0.0",
+   "faiss-cpu>=1.11.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ark_v1*"]
+

@@ -1,0 +1,69 @@
+# =========================================
+# Python project .gitignore (2025)
+# =========================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+*.ipynb_convert
+
+# IDE / Editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Mac / Linux / Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Type checker / linter caches
+.mypy_cache/
+.pyre/
+.pytype/
+ruff_cache/
+
+# Sphinx / docs
+docs/_build/
+build/doctrees/
+build/html/
+
+# Conda environment files (lock / backup)
+*.conda-env.yml
+*.conda-lock.yml
