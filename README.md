@@ -19,3 +19,14 @@ Test the agent by running a small example using a local qwen3:14b model:
 ```bash
 python examples/minimal_ollama.py qwen3:14b
 ```
+
+## Cite our work
+Link to the corresponding paper: [Link](https://arxiv.org/abs/2509.18063)
+```bash
+@article{klein2025ark,
+  title={ARK-V1: An LLM-Agent for Knowledge Graph Question Answering Requiring Commonsense Reasoning},
+  author={Klein, Jan-Felix and Ohnemus, Lars},
+  journal={arXiv preprint arXiv:2509.18063},
+  year={2025}
+}
+```
