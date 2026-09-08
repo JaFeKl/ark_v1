@@ -314,7 +314,7 @@ class ARK_V1(Agent):
 
             try:
                 relations_selected: Relation = self.llm.with_structured_output(
-                    Relation
+                    Relation,
                 ).invoke(
                     state.messages
                 )  # get last
@@ -430,7 +430,7 @@ class ARK_V1(Agent):
 
             try:
                 verified_result.result = self.llm.with_structured_output(
-                    ReasoningStepResult
+                    ReasoningStepResult,
                 ).invoke(state.messages)
             except Exception as e:
                 print(f"Failed to reason: {e}")
@@ -558,7 +558,9 @@ class ARK_V1(Agent):
                 },
             )
             state.extend_messages(prompt)
-            result = self.llm.with_structured_output(answer).invoke(state.messages)
+            result = self.llm.with_structured_output(
+                answer,
+            ).invoke(state.messages)
             state.append_message(AIMessage(content=result.model_dump_json()))
             state.finalAnswer = result
             return state
@@ -657,13 +659,16 @@ class ARK_V1(Agent):
     def run_with_config(self, config: Dict[str, Any]) -> RuntimeState:
         self.load_configuration(config)
 
-    def run(self) -> dict:
+    def run(self, langfuse_callback_handler=None) -> dict:
         """Run the agent and return the final state"""
         events = self.graph.stream(
             self.initial_state,
             stream_mode="values",
             config={
                 "recursion_limit": self.recursion_limit,
+                "callbacks": (
+                    [langfuse_callback_handler] if langfuse_callback_handler else []
+                ),
             },
         )
 

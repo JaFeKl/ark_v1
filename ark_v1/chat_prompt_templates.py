@@ -30,7 +30,7 @@ def get_prompt_summarize_reasoning() -> ChatPromptTemplate:
     return ChatPromptTemplate(
         [
             (
-                "system",
+                "user",
                 "This is a summary of {number_of_steps} reasoning steps completed so far: "
                 "{summary}\n\n"
                 "You must use this summary to maintain consistency. Do not repeat facts already retrieved unless needed for clarity.",
@@ -43,7 +43,7 @@ def get_prompt_select_anchor() -> ChatPromptTemplate:
     return ChatPromptTemplate(
         [
             (
-                "system",
+                "user",
                 "(Iteration {iteration}, Step 2.1, Attempt {attempt}): "
                 "{failed_attempts}"
                 "Task: Select exactly ONE specific anchor entity (a node name) from the knowledge graph "
@@ -61,7 +61,7 @@ def get_prompt_select_relation() -> ChatPromptTemplate:
     return ChatPromptTemplate(
         [
             (
-                "system",
+                "user",
                 "(Iteration {iteration}, Step 2.2, Attempt {attempt}): "
                 "The previous message contains a list of relations starting from your selected anchor entity. "
                 "{summary_previous_attempts}"
@@ -78,7 +78,7 @@ def get_prompt_perform_reasoning() -> ChatPromptTemplate:
     return ChatPromptTemplate(
         [
             (
-                "system",
+                "user",
                 "(Iteration {iteration}, Step 3, Attempt {attempt})\n"
                 "You have received triples from the KG for your selected relations.\n"
                 "Task: Reason based on these triples towards answering the user request.\n"
@@ -98,7 +98,7 @@ def get_prompt_create_final_answer() -> ChatPromptTemplate:
     return ChatPromptTemplate(
         [
             (
-                "system",
+                "user",
                 "It is time to prepare the final answer for the user request: {user_request} "
                 "The previous reasoning steps were as follows: \n"
                 "{reasoning_steps}"
