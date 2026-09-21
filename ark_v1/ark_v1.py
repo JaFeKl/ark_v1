@@ -11,6 +11,8 @@ from langchain_core.messages import (
     AIMessage,
     ToolMessage,
 )
+
+from langchain_core.callbacks import BaseCallbackHandler
 from ark_v1.utils import (
     draw_graph,
     get_llm,
@@ -659,22 +661,35 @@ class ARK_V1(Agent):
     def run_with_config(self, config: Dict[str, Any]) -> RuntimeState:
         self.load_configuration(config)
 
-    def run(self, langfuse_callback_handler=None) -> dict:
+    async def run(self, langfuse_callback_handler=None) -> dict:
+
+        class LogChainErrors(BaseCallbackHandler):
+            def on_chain_error(self, error, *, run_id, parent_run_id=None, **kwargs):
+                print(
+                    "chain error:",
+                    type(error).__name__,
+                    repr(error),
+                    "root:",
+                    parent_run_id is None,
+                )
+
         """Run the agent and return the final state"""
-        events = self.graph.stream(
+        events = self.graph.astream(
             self.initial_state,
             stream_mode="values",
             config={
                 "recursion_limit": self.recursion_limit,
                 "callbacks": (
-                    [langfuse_callback_handler] if langfuse_callback_handler else []
+                    [langfuse_callback_handler, LogChainErrors()]
+                    if langfuse_callback_handler
+                    else [LogChainErrors()]
                 ),
             },
         )
 
         last_event = None
 
-        for event in events:
+        async for event in events:
             if not event["messages"]:
                 # Skip when messages are empty
                 continue

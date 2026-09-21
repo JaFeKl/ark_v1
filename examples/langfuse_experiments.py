@@ -26,11 +26,10 @@ langfuse_handler = CallbackHandler()
 
 # Experiment metadata
 experiment_metadata = {
-    "model": "qwen3.8:27b",
+    "model": "qwen3.5:9b",
     "provider": "LiteLLM",
-    "temperature": 0.0,
+    "temperature": 0.1,
     "seed": 42,
-    "top_p": 0.3,
 }
 
 LITE_LLM_BASE_URL = os.environ.get("LITELLM_BASE_URL")
@@ -43,7 +42,6 @@ llm = ChatOpenAI(
     api_key=LITE_LLM_VIRTUAL_KEY,
     temperature=experiment_metadata["temperature"],
     seed=experiment_metadata["seed"],
-    top_p=experiment_metadata["top_p"],
 )
 
 agent = ARK_V1()
@@ -88,12 +86,15 @@ agent.load_configuration(config={})
 
 
 # Define the task function we pass to the experiment runner method
-def my_task(*, item: DatasetItem, **kwargs):
+async def my_task(*, item: DatasetItem, **kwargs):
     # Initialize the agent with the input data
     agent.load_graph_data(item.metadata["graph"])
     agent.set_initial_state(question=item.input)
-    output = agent.run(langfuse_callback_handler=langfuse_handler)
-    return output.get("finalAnswer", {}).get("answer", "No answer found")
+    output = await agent.run(langfuse_callback_handler=langfuse_handler)
+    final_answer = output.get("finalAnswer", {}).get("answer", "No answer found")
+    if final_answer is None:
+        final_answer = "Unanswered"
+    return final_answer
 
 
 # ------------------------------------------------

@@ -1,10 +1,10 @@
+import asyncio
 import sys
 import os
 import json
 import logging
 from ark_v1.ark_v1 import ARK_V1
 from langchain_ollama import ChatOllama
-
 
 # Configure logging
 logging.basicConfig(
@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 
 
-def main():
+async def main():
     if len(sys.argv) < 2:
         print("Usage: python minimal_ollama.py <model_name>")
         sys.exit(1)
@@ -44,7 +44,7 @@ def main():
 
     agent.load_graph_data(example_data["graph"])
     agent.set_initial_state(question=example_data["question"])
-    final_state = agent.run()
+    final_state = await agent.run()
 
     logging.info(
         f"Final answer: {final_state.get('finalAnswer').get('answer', 'No answer found')}"
@@ -52,4 +52,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
